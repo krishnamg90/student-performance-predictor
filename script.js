@@ -328,7 +328,7 @@ async function downloadPDF() {
     const { jsPDF } = window.jspdf;
 
     const doc = new jsPDF();
-
+    let studentName = document.getElementById("name").value;
     let gender = document.getElementById("gender").value;
     let age = document.getElementById("age").value;
     let study = document.getElementById("study").value;
