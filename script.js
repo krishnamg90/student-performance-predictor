@@ -22,6 +22,7 @@ function predictScore() {
     // Validation
 
     if (
+        name == ""   ||
         gender == "" ||
         age == "" ||
         study == "" ||
@@ -328,6 +329,7 @@ async function downloadPDF() {
     const { jsPDF } = window.jspdf;
 
     const doc = new jsPDF();
+    
     let studentName = document.getElementById("name").value;
     let gender = document.getElementById("gender").value;
     let age = document.getElementById("age").value;
@@ -347,7 +349,7 @@ async function downloadPDF() {
     doc.setFontSize(12);
 
     doc.text("Student Details", 20, 35);
-
+    doc.text("Student Name : " + studentName,20,45);
     doc.text("Gender : " + gender, 20, 45);
     doc.text("Age : " + age, 20, 55);
     doc.text("Study Hours : " + study, 20, 65);
